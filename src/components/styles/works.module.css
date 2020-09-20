@@ -1,0 +1,81 @@
+.worksComponent {
+	position: relative;
+	padding: 75px 0;
+	text-align: center;
+	color: #fff;
+}
+
+.slant {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	background-color: #3f95e6;
+	transform: skewY(2deg);
+}
+
+.content {
+	overflow: hidden;
+}
+.content > p {
+	font-size: 1.1em;
+}
+
+.works {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	margin: 80px 0 16px;
+}
+
+.works .work {
+	position: relative;
+	padding: 8px;
+	background-color: #fff;
+	color: #333;
+	margin: 0 32px;
+	border-radius: 8px;
+}
+
+.works .work .image {
+	position: relative;
+	bottom: 48px;
+	border-radius: 8px;
+	overflow: hidden;
+}
+.works .work .image .picture {
+	display: block !important;
+}
+
+.works .work .description {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.works .work .description p {
+	margin: 16px 0;
+}
+
+.pagination {
+	display: flex;
+	justify-content: center;
+	margin: 48px 0 16px;
+}
+.pagination .paginationItem {
+	height: 6px;
+	width: 30px;
+	border-radius: 100px;
+	background-color: rgba(255, 255, 255, 0.5);
+	margin: 0 8px;
+	cursor: pointer;
+	transition: background-color 0.15s ease-out;
+}
+.pagination .paginationItem:hover {
+	background-color: rgba(255, 255, 255, 1);
+}
+.pagination .paginationItem.paginationItemActive {
+	background-color: rgba(255, 255, 255, 1);
+}

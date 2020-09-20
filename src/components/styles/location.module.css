@@ -1,0 +1,42 @@
+.maxWidth {
+	width: 95%;
+	max-width: 1200px;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap-reverse;
+}
+
+.blue {
+	color: #3f95e6;
+	font-size: 1.2em;
+}
+
+.left {
+	width: 100%;
+	padding: 30px;
+}
+.left .box {
+	width: 100%;
+	margin: auto;
+	padding-bottom: 100%;
+	background-color: #eee;
+	border-radius: 8px;
+}
+
+.right {
+	width: 100%;
+	padding: 30px;
+}
+.right p {
+	font-size: 1.3em;
+}
+
+@media only screen and (min-width: 1024px) {
+	.right {
+		width: 50%;
+		padding: 65px 30px 30px;
+	}
+	.left {
+		width: 50%;
+	}
+}

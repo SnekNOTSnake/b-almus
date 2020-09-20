@@ -1,0 +1,80 @@
+.maxWidth {
+	width: 95%;
+	max-width: 1200px;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.blue {
+	color: #3f95e6;
+	font-size: 1.2em;
+}
+
+.left {
+	width: 100%;
+	padding: 30px;
+}
+.left h2 {
+	margin-bottom: 32px;
+}
+.left .errors {
+	margin-bottom: 16px;
+	color: #da3040;
+	text-align: left;
+}
+.left .errors .error {
+	margin-bottom: 8px;
+}
+
+.right {
+	width: 100%;
+	padding: 30px;
+}
+.right .box {
+	margin: auto;
+	width: 100%;
+	min-height: 600px;
+	padding: 30px 45px;
+	background-color: #3f95e6;
+	border-radius: 8px;
+	color: #fff;
+}
+.right .box p {
+	white-space: nowrap;
+}
+.right h2 {
+	margin-bottom: 64px;
+}
+
+.right .contact {
+	display: flex;
+	white-space: nowrap;
+	margin-bottom: 24px;
+}
+.right .contact .icon {
+	font-size: 1.6em;
+	width: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 16px;
+}
+.right .contact .text {
+	font-size: 1.2em;
+}
+
+@media only screen and (min-width: 1024px) {
+	.left {
+		width: 50%;
+		padding: 65px 30px 30px;
+		text-align: right;
+	}
+	.right {
+		width: 50%;
+	}
+	.right .box {
+		width: 400px;
+		margin: initial;
+	}
+}

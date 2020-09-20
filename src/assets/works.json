@@ -1,0 +1,20 @@
+[
+	{
+		"title": "Viva le France",
+		"src": "../images/works/viva-le-france.jpg",
+		"description": "lorem ipsum dolor sit amet consectetud adipiscing elit",
+		"date": 1600483402966
+	},
+	{
+		"title": "Tour de Roma",
+		"src": "../images/works/tour-de-roma.jpg",
+		"description": "lorem ipsum dolor sit amet consectetud adipiscing elit",
+		"date": 1600483402966
+	},
+	{
+		"title": "Reilly O' Neal",
+		"src": "../images/works/reilly-o-neal.jpg",
+		"description": "lorem ipsum dolor sit amet consectetud adipiscing elit",
+		"date": 1600483402966
+	}
+]
