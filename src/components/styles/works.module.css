@@ -18,9 +18,10 @@
 
 .content {
 	overflow: hidden;
+	padding-bottom: 50px;
 }
 .content > p {
-	font-size: 1.1em;
+	font-size: 1.2em;
 }
 
 .works {
@@ -28,6 +29,11 @@
 	flex-wrap: nowrap;
 	justify-content: center;
 	margin: 80px 0 16px;
+	overflow: visible;
+	cursor: grab;
+}
+.works:active {
+	cursor: grabbing;
 }
 
 .works .work {
@@ -37,6 +43,7 @@
 	color: #333;
 	margin: 0 32px;
 	border-radius: 8px;
+	width: 350px;
 }
 
 .works .work .image {
@@ -44,9 +51,6 @@
 	bottom: 48px;
 	border-radius: 8px;
 	overflow: hidden;
-}
-.works .work .image .picture {
-	display: block !important;
 }
 
 .works .work .description {
@@ -57,25 +61,4 @@
 }
 .works .work .description p {
 	margin: 16px 0;
-}
-
-.pagination {
-	display: flex;
-	justify-content: center;
-	margin: 48px 0 16px;
-}
-.pagination .paginationItem {
-	height: 6px;
-	width: 30px;
-	border-radius: 100px;
-	background-color: rgba(255, 255, 255, 0.5);
-	margin: 0 8px;
-	cursor: pointer;
-	transition: background-color 0.15s ease-out;
-}
-.pagination .paginationItem:hover {
-	background-color: rgba(255, 255, 255, 1);
-}
-.pagination .paginationItem.paginationItemActive {
-	background-color: rgba(255, 255, 255, 1);
 }

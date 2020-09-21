@@ -30,17 +30,20 @@
 	display: flex;
 }
 .box .part .boxIcon {
-	font-size: 2.5em;
 	margin-right: 30px;
-	width: 40px;
+	font-size: 2em;
+	width: 20px;
 }
 
 .blue {
 	color: #3f95e6;
-	font-size: 1.2em;
+	font-size: 1.3em;
 }
 
 .left p {
+	font-size: 1.3em;
+}
+.left a {
 	font-size: 1.3em;
 }
 
@@ -54,5 +57,10 @@
 	}
 	.right {
 		width: 50%;
+	}
+
+	.box .part .boxIcon {
+		font-size: 2.5em;
+		width: 40px;
 	}
 }

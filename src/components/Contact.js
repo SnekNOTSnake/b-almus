@@ -26,6 +26,9 @@ const Contact = () => {
 						<div className={styles.blue}>Contact us</div>
 						<h2>Send us a message</h2>
 						<form onSubmit={handleSubmit(submitHandler)}>
+							<label style={{ display: 'none' }} htmlFor="email">
+								Email
+							</label>
 							<input
 								name="email"
 								ref={register({ required: true, pattern: emailRegex })}
@@ -42,6 +45,9 @@ const Contact = () => {
 									)}
 								</div>
 							)}
+							<label style={{ display: 'none' }} htmlFor="message">
+								Message
+							</label>
 							<textarea
 								name="message"
 								ref={register({ required: true, minLength: 8 })}
@@ -86,7 +92,7 @@ const Contact = () => {
 								<div className={styles.icon}>
 									<FontAwesomeIcon icon={faPhone} />
 								</div>
-								<div className={styles.text}>+62 896-1237-7160</div>
+								<div className={styles.text}>+62 813-2719-1957</div>
 							</div>
 						</div>
 					</div>

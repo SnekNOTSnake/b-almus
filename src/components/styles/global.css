@@ -1,3 +1,25 @@
 * {
 	box-sizing: border-box;
 }
+
+/*
+	Swiper Pagination The pagination style somehow refused to get imported, so I'll just have to create one
+*/
+.swiper-pagination {
+	position: absolute;
+	bottom: -50px !important;
+}
+.swiper-pagination-bullet {
+	display: inline-block;
+	border-radius: 100px;
+	margin: 0 4px;
+	width: 8px;
+	height: 8px;
+	cursor: pointer;
+	opacity: 0.5;
+	background-color: #fff !important;
+}
+.swiper-pagination-bullet-active {
+	opacity: 1;
+	background-color: #fff !important;
+}

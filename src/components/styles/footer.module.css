@@ -52,6 +52,9 @@
 		grid-template-columns: auto auto;
 		text-align: left;
 	}
+	.maxWidth > div:nth-child(even) {
+		text-align: right;
+	}
 	.footer .logo {
 		justify-content: flex-start;
 	}

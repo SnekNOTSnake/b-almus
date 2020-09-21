@@ -12,6 +12,7 @@ module.exports = {
 		author: 'SnekNOTSnake,Birun Al-Mustofa',
 	},
 	plugins: [
+		'gatsby-plugin-sass',
 		'gatsby-transformer-sharp',
 		'gatsby-plugin-sharp',
 		'gatsby-transformer-json',
@@ -35,6 +36,12 @@ module.exports = {
 			resolve: 'gatsby-plugin-google-analytics',
 			options: {
 				trackingId: process.env.GATSBY_GOOGLE_ANALYTICS_TRACKING_ID,
+			},
+		},
+		{
+			resolve: 'gatsby-plugin-react-leaflet',
+			options: {
+				linkStyles: false,
 			},
 		},
 		{

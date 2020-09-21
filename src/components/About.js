@@ -29,9 +29,9 @@ const About = () => {
 						<div className={styles.blue}>About us</div>
 						<h2>B-Almus Civil Engineer</h2>
 						<p>
-							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo
-							consequatur beatae cumque nesciunt quidem quae officia reiciendis
-							fuga.
+							Specialized in House building, B-Almus has built dozens of large
+							projects across Central Java, gaining respect from Civil
+							Engineering world.
 						</p>
 						<Link
 							activeClass="active"
@@ -49,20 +49,20 @@ const About = () => {
 							<Part
 								icon={faHardHat}
 								title="Efficient Working"
-								text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat in expedita."
+								text="Efficiency in time consumed, materials used, and efforts committed"
 							/>
 							<hr />
 							<Part
 								icon={faPoundSign}
 								iconStyle={{ width: '1em' }}
 								title="Friendly Prices"
-								text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat in expedita."
+								text="Prices scales nicely, no rip-offs or overprices. We know you're a human being too"
 							/>
 							<hr />
 							<Part
 								icon={faCheck}
 								title="The 'ol Reliable"
-								text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat in expedita"
+								text="There were none complaints about their works, making them a reliable engineer"
 							/>
 						</div>
 					</div>

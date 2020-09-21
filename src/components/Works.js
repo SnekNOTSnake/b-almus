@@ -1,9 +1,13 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
-import clsx from 'clsx'
 import { Element } from 'react-scroll'
+import SwiperCore, { Pagination } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/swiper.scss'
 import styles from './styles/works.module.css'
+
+SwiperCore.use([Pagination])
 
 const Works = () => {
 	const data = useStaticQuery(graphql`
@@ -17,8 +21,13 @@ const Works = () => {
 						date
 						src {
 							childImageSharp {
-								fixed(width: 350, height: 240, cropFocus: NORTH, quality: 90) {
-									...GatsbyImageSharpFixed_tracedSVG
+								fluid(
+									maxWidth: 350
+									maxHeight: 240
+									quality: 90
+									traceSVG: { background: "#ddd", color: "#fff" }
+								) {
+									...GatsbyImageSharpFluid_tracedSVG
 								}
 							}
 						}
@@ -36,33 +45,33 @@ const Works = () => {
 				<div className={styles.slant} />
 				<div className={styles.content}>
 					<h2>Our Works</h2>
-					<p>Lorem ipsum something cool</p>
-					<div className={styles.works}>
+					<p>Some showcases of what we have built</p>
+					<Swiper
+						centeredSlides={true}
+						slidesPerView="auto"
+						initialSlide={1}
+						className={styles.works}
+						pagination={{
+							clickable: true,
+							renderBullet: (index, className) =>
+								`<div class="${className}"></div>`,
+						}}
+					>
 						{works.map(({ node }) => (
-							<div key={node.id} className={styles.work}>
+							<SwiperSlide key={node.id} className={styles.work}>
 								<div className={styles.image}>
 									<Img
 										className={styles.picture}
-										fixed={node.src.childImageSharp.fixed}
+										fluid={node.src.childImageSharp.fluid}
 										alt={node.title}
 									/>
 								</div>
 								<div className={styles.description}>
 									<p>{node.title}</p>
 								</div>
-							</div>
+							</SwiperSlide>
 						))}
-					</div>
-					<div className={styles.pagination}>
-						<div className={styles.paginationItem} />
-						<div
-							className={clsx(
-								styles.paginationItem,
-								styles.paginationItemActive,
-							)}
-						/>
-						<div className={styles.paginationItem} />
-					</div>
+					</Swiper>
 				</div>
 			</Element>
 		</section>
