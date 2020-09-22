@@ -1,5 +1,5 @@
 import React from 'react'
-import baLogo from '../images/ba-logo-white.svg'
+import BaLogo from '../images/ba-logo-white.inline.svg'
 import styles from './styles/footer.module.css'
 
 const Footer = () => {
@@ -8,7 +8,7 @@ const Footer = () => {
 			<div className={styles.maxWidth}>
 				<div className={styles.logo}>
 					<div className={styles.icon}>
-						<img src={baLogo} alt="B-Almus logo" />
+						<BaLogo />
 					</div>
 					B-Almus
 				</div>

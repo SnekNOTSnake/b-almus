@@ -2,16 +2,16 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
 	faHardHat,
-	faPoundSign,
+	faMoneyBillAlt,
 	faCheck,
 } from '@fortawesome/free-solid-svg-icons'
 import { Element, Link } from 'react-scroll'
 import styles from './styles/about.module.css'
 
-const Part = ({ icon, title, text, iconStyle = {} }) => (
+const Part = ({ icon, title, text }) => (
 	<div className={styles.part}>
-		<div className={styles.boxIcon}>
-			<FontAwesomeIcon style={iconStyle} icon={icon} />
+		<div style={{ fontSize: '2em' }} className={styles.boxIcon}>
+			<FontAwesomeIcon icon={icon} />
 		</div>
 		<div>
 			<h3>{title}</h3>
@@ -38,7 +38,7 @@ const About = () => {
 							to="works"
 							spy={true}
 							smooth={true}
-							offset={-150}
+							offset={-50}
 							duration={500}
 						>
 							Scroll down
@@ -53,8 +53,7 @@ const About = () => {
 							/>
 							<hr />
 							<Part
-								icon={faPoundSign}
-								iconStyle={{ width: '1em' }}
+								icon={faMoneyBillAlt}
 								title="Friendly Prices"
 								text="Prices scales nicely, no rip-offs or overprices. We know you're a human being too"
 							/>

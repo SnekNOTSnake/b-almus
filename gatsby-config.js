@@ -13,6 +13,14 @@ module.exports = {
 	},
 	plugins: [
 		'gatsby-plugin-sass',
+		{
+			resolve: 'gatsby-plugin-react-svg',
+			options: {
+				rule: {
+					include: /\.inline\.svg$/,
+				},
+			},
+		},
 		'gatsby-transformer-sharp',
 		'gatsby-plugin-sharp',
 		'gatsby-transformer-json',
@@ -51,8 +59,8 @@ module.exports = {
 				name: 'B-Almus',
 				short_name: 'B-Almus',
 				start_url: '/',
-				background_color: '#3F95E6',
-				theme_color: '#3F95E6',
+				background_color: '#2196f3',
+				theme_color: '#2196f3',
 				display: 'standalone',
 				icon: 'src/images/ba-logo.png',
 				icon_options: {

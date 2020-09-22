@@ -1,31 +1,117 @@
 import React from 'react'
+import ReCAPTCHA from 'react-google-recaptcha'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
 	faMapMarkerAlt,
 	faEnvelope,
 	faPhone,
+	faCheckCircle,
+	faTimes,
 } from '@fortawesome/free-solid-svg-icons'
+import emailRegex from '../utils/emailRegex'
+import encodeUrl from '../utils/encodeUrl'
 import { useForm } from 'react-hook-form'
 import { Element } from 'react-scroll'
 import Button from './Button'
 import styles from './styles/contact.module.css'
 
-const emailRegex = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/
-
 const Contact = () => {
+	const [submitting, setSubmitting] = React.useState(false)
+	const [snackbarOpen, setSnackbarOpen] = React.useState(false)
+	const [snackbarStatus, setSnackbarStatus] = React.useState('success')
+	const [captchaVal, setCaptchaVal] = React.useState(null)
+	const [submitted, setSubmitted] = React.useState(false)
+
+	const recaptchaChange = (val) => {
+		setCaptchaVal(val)
+	}
+
 	const { register, handleSubmit, errors } = useForm()
 	const submitHandler = (val) => {
-		console.log(val)
+		setSubmitting(true)
+
+		fetch('/', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+			body: encodeUrl({
+				'form-name': 'contact-us',
+				'g-recaptcha-response': captchaVal,
+				...val,
+			}),
+		})
+			.then(() => {
+				setSnackbarOpen(true)
+				setSnackbarStatus('success')
+				setCaptchaVal(null)
+				setSubmitted(true)
+			})
+			.catch((err) => {
+				setSnackbarOpen(true)
+				setSnackbarStatus('error')
+				console.err(err)
+			})
+			.finally(() => setSubmitting(false))
 	}
 
 	return (
 		<section>
 			<Element name="contact">
+				<div
+					className={`${styles.snackbar} ${
+						snackbarOpen ? styles.snackbarActive : ''
+					}`}
+					onClick={(e) => {
+						if (e.currentTarget === e.target) {
+							setSnackbarOpen(false)
+						}
+					}}
+					onKeyDown={() => {
+						setSnackbarOpen(false)
+					}}
+					role="button"
+					tabIndex={0}
+				>
+					<div
+						style={{
+							backgroundColor:
+								snackbarStatus === 'error' ? '#f44336' : '#4caf50',
+						}}
+						className={styles.snackbarDialog}
+					>
+						{snackbarStatus === 'error' ? (
+							<div className={styles.snackbarContent}>
+								{
+									<FontAwesomeIcon
+										className={styles.snackbarIcon}
+										icon={faTimes}
+									/>
+								}{' '}
+								Failed to send message, please check your connection
+							</div>
+						) : (
+							<div className={styles.snackbarContent}>
+								{
+									<FontAwesomeIcon
+										className={styles.snackbarIcon}
+										icon={faCheckCircle}
+									/>
+								}
+								Thank you for contacting us. we'll respond to it later!
+							</div>
+						)}
+					</div>
+				</div>
+
 				<div className={styles.maxWidth}>
 					<div className={styles.left}>
 						<div className={styles.blue}>Contact us</div>
 						<h2>Send us a message</h2>
-						<form onSubmit={handleSubmit(submitHandler)}>
+						<form
+							name="contact-us"
+							data-netlify="true"
+							data-netlify-recaptcha="true"
+							onSubmit={handleSubmit(submitHandler)}
+						>
 							<label style={{ display: 'none' }} htmlFor="email">
 								Email
 							</label>
@@ -65,7 +151,20 @@ const Contact = () => {
 									)}
 								</div>
 							)}
-							<Button type="submit">Submit</Button>
+							<div className={styles.recaptcha}>
+								<ReCAPTCHA
+									sitekey="6LeIyc4ZAAAAAIySGXVhxue--RS9NKFZ8T30M_3Z"
+									onChange={recaptchaChange}
+								/>
+							</div>
+							<Button
+								darn="boom"
+								disabled={submitting || !captchaVal || submitted}
+								className={submitting ? styles.loading : ''}
+								type="submit"
+							>
+								Submit
+							</Button>
 						</form>
 					</div>
 

@@ -7,13 +7,13 @@
 }
 
 .blue {
-	color: #3f95e6;
+	color: #2196f3;
 	font-size: 1.3em;
 }
 
 .left {
 	width: 100%;
-	padding: 30px;
+	padding: 30px 10px;
 }
 .left .box {
 	width: 100%;
@@ -28,7 +28,7 @@
 
 .right {
 	width: 100%;
-	padding: 30px;
+	padding: 30px 10px;
 }
 .right p {
 	font-size: 1.3em;

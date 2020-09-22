@@ -5,8 +5,8 @@ import offset from '../utils/offset'
 const Button = ({
 	children,
 	duration = 750,
-	type = 'button',
 	rippleColor = '#fff',
+	...args
 }) => {
 	const [ripples, setRipples] = React.useState([])
 
@@ -42,9 +42,9 @@ const Button = ({
 	return (
 		<button
 			onClick={showRipple}
-			type={type}
 			ref={buttonEl}
 			className={styles.button}
+			{...args}
 		>
 			{children}
 			<div className={styles.rippleContainer}>

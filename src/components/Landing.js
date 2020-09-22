@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-scroll'
 import Button from './Button'
-import baLogo from '../images/ba-logo-white.svg'
-import illustration from '../images/illustration.svg'
+import BaLogo from '../images/ba-logo-white.inline.svg'
+import Illustration from '../images/illustration.inline.svg'
 import styles from './styles/landing.module.css'
 
 const Landing = () => {
@@ -12,7 +12,7 @@ const Landing = () => {
 				<div className={styles.navBody}>
 					<a href="http://localhost:8000" className={styles.logo}>
 						<div className={styles.icon}>
-							<img src={baLogo} alt="B-Almus" />
+							<BaLogo />
 						</div>
 						B-Almus
 					</a>
@@ -24,7 +24,7 @@ const Landing = () => {
 									to="about"
 									spy={true}
 									smooth={true}
-									offset={-100}
+									offset={-50}
 									duration={500}
 								>
 									About
@@ -36,7 +36,7 @@ const Landing = () => {
 									to="works"
 									spy={true}
 									smooth={true}
-									offset={-150}
+									offset={-50}
 									duration={500}
 								>
 									Works
@@ -48,7 +48,7 @@ const Landing = () => {
 									to="location"
 									spy={true}
 									smooth={true}
-									offset={-100}
+									offset={-50}
 									duration={500}
 								>
 									Location
@@ -60,7 +60,7 @@ const Landing = () => {
 									to="contact"
 									spy={true}
 									smooth={true}
-									offset={-100}
+									offset={-50}
 									duration={500}
 								>
 									Contact
@@ -83,10 +83,10 @@ const Landing = () => {
 					to="about"
 					spy={true}
 					smooth={true}
-					offset={-100}
+					offset={-50}
 					duration={500}
 				>
-					<Button rippleColor="#3f95e6" type="button">
+					<Button rippleColor="#2196f3" type="button">
 						learn more
 					</Button>
 				</Link>
@@ -94,7 +94,7 @@ const Landing = () => {
 
 			<div className={styles.illustration}>
 				<div className={styles.illustrationBody}>
-					<img src={illustration} alt="Construction Illustration" />
+					<Illustration />
 				</div>
 			</div>
 		</section>

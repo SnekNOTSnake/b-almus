@@ -49,7 +49,6 @@ const Works = () => {
 					<Swiper
 						centeredSlides={true}
 						slidesPerView="auto"
-						initialSlide={1}
 						className={styles.works}
 						pagination={{
 							clickable: true,

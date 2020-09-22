@@ -1,7 +1,7 @@
 .footer {
 	background-color: #222;
 	color: #fff;
-	padding: 75px;
+	padding: 30px 10px;
 }
 
 .footer .logo {
@@ -15,6 +15,10 @@
 	width: 20px;
 	margin-right: 8px;
 }
+.footer .logo .icon svg {
+	width: 100%;
+	display: block;
+}
 
 .footer p {
 	margin-bottom: 0;
@@ -23,7 +27,7 @@
 
 .maxWidth {
 	grid-template-columns: auto;
-	gap: 16px;
+	gap: 24px;
 	text-align: center;
 	display: grid;
 	width: 95%;
@@ -33,6 +37,7 @@
 
 .footer .links a {
 	display: inline-block;
+	margin-bottom: 8px;
 }
 .footer .links a svg {
 	width: 32px;
@@ -47,6 +52,9 @@
 }
 
 @media only screen and (min-width: 1024px) {
+	.footer {
+		padding: 75px;
+	}
 	.maxWidth {
 		gap: 32px;
 		grid-template-columns: auto auto;
